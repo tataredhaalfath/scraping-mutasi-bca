@@ -31,11 +31,7 @@ const loginBCA = (token1, token2) => {
       await driver.findElement(By.name("Image13")).click();
 
       //  masuk menu mutasi
-      let mutasi = "";
-      cron.schedule("* * * * *", async () => {
-        console.log("running a task every minute");
-        mutasi = await formMutasi(driver);
-      });
+      let mutasi = await formMutasi(driver);
       await logoutBCA(driver);
       await driver.quit();
       return resolve(mutasi);
